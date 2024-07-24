@@ -1,15 +1,8 @@
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-import time
+from src.data_fetcher import selenium_web
+from src.data_transformer import process_csv_files
+import pandas as pd
 
-driver = webdriver.Edge()
-driver.get("http://www.python.org")
-assert "Python" in driver.title
-elem = driver.find_element(By.NAME, "q")
-elem.clear()
-elem.send_keys("pycon")
-elem.send_keys(Keys.RETURN)
-assert "No results found." not in driver.page_source
-time.sleep(10)
-driver.close()
+selenium_web(days=1000)
+process_csv_files()
+
+
