@@ -2,8 +2,8 @@ import os
 import pandas as pd
 import re
 
-def process_csv_files(input_folder='C:/Users/sachi/OneDrive/Documents/BOTS/SELENIUM/data',
-                      output_folder='C:/Users/sachi/OneDrive/Documents/BOTS/SELENIUM/data_check'):
+def process_csv_files(input_folder,
+                      output_folder):
     # List all files in the input folder
     files = os.listdir(input_folder)
 
@@ -58,6 +58,4 @@ def process_csv_files(input_folder='C:/Users/sachi/OneDrive/Documents/BOTS/SELEN
         except Exception as e:
             print(f"Error saving file for symbol {symbol}: {e}")
 
-
-process_csv_files()
 
